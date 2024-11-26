@@ -30,19 +30,24 @@ export default function App(){
     setCity(getCity)
   }
   return(
-    <div>
-      <input
-        type='text'
-        placeholder='Search City...'
-        value={getCity}
-        onChange={e => setGetCity(e.target.value)}
-      />
+    <div className='App'>
+
+      <section className='sectionSidebar'>
+       <input
+         type='text'
+         placeholder='Search City...'
+         value={getCity}
+         onChange={e => setGetCity(e.target.value)}
+       />
       <button onClick={handleCity}>Search</button>
+      </section>
+      <section className='sectionMain'>
       <WeatherCard
         name={weatherData.name}
         tempHI={weatherData?.main?.temp_max}
         tempLO={weatherData?.main?.temp_min}
       />
+      </section>
     </div>
   )
 }
