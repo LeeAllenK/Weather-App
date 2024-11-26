@@ -40,8 +40,8 @@ export default function App(){
       <button onClick={handleCity}>Search</button>
       <WeatherCard
         name={weatherData.name}
-        tempHi={weatherData?.main?.temp_max}
-        tempLo={weatherData?.main?.temp_min}
+        tempHI={weatherData?.main?.temp_max}
+        tempLO={weatherData?.main?.temp_min}
       />
     </div>
   )
