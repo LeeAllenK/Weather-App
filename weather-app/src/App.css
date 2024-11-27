@@ -1,42 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+  box-sizing: border-box;
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  /* font-size: 40px; */
-  font-weight: bolder;
 }
 body{
   background-color:  lightgrey;
-}
-.WeatherCard {
-  border: 2px solid black;
-  width: 30%;
-  padding: 10px;
-  
+  font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
 }
 
-.temps{
+.App{
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
+}
+.input{
+  display: flex;
+  min-width: 100px;
+  margin: 20px;
+}
+.WeatherCard {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  width: 100%px;
+  padding: 20px;
 
 }
-.App{
-  display: grid;
-  grid-template-columns: 45% 50% 50%;
-}
-p{
-  border: 2px solid black;
-  font-size: 60px;
+.temps{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
   
 }
 
 .sectionSidebar{
+  border: 1px solid blue;
+  border-radius: 20px;
+
+}
+.sidebar{
+  display: flex;
   border: 1px solid black;
-  width: 30%;
-  
-  text-align: left;
 }
 .sectionMain{
+  display: flex;
+  flex-direction: column;
+  
+  border: 1px solid black;
+  min-width: 10px;
+  width: 70%;
+
+}
+
+.defaultCard{
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 10px;
+  height: 150px;
+overflow: hidden;
+  flex: 0 0 20%;
+}
+.wind{
+  display: flex;
+
+}
+
+.sectionData{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 20px;
+  height: 500px;
+}
+
+.sectionLongLat{
+  display: flex;
+  border:2px solid black;
+}
+
+.Humidity{
+  display: flex;
+  color: red;
 
 }
