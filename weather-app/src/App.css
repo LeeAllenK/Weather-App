@@ -5,14 +5,15 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 5px; */
   text-align: center;
 }
 body{
   background-color:  lightgrey;
   font-family: "Roboto", sans-serif;
-    font-weight: bolder;
-    font-style: normal;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 20px;
 }
 
 .App{
@@ -29,8 +30,10 @@ body{
   display: flex;
   justify-content: center;
   border: 2px solid black;
+  border-radius: 60px;
   width: 100%px;
   padding: 20px;
+  
 
 }
 .temps{
@@ -42,22 +45,16 @@ body{
 }
 
 .sectionSidebar{
-  border: 1px solid blue;
-  border-radius: 20px;
-
-}
-.sidebar{
-  display: flex;
   border: 1px solid black;
+  border-radius: 20px;
+  height: 700px;
 }
+
 .sectionMain{
   display: flex;
   flex-direction: column;
-  
-  border: 1px solid black;
   min-width: 10px;
   width: 70%;
-
 }
 
 .defaultCard{
@@ -66,8 +63,9 @@ body{
   border-radius: 20px;
   margin: 10px;
   height: 150px;
-overflow: hidden;
+  overflow: hidden;
   flex: 0 0 20%;
+box-shadow: 10px 5px 5px red;
 }
 .wind{
   display: flex;
@@ -85,10 +83,4 @@ overflow: hidden;
 .sectionLongLat{
   display: flex;
   border:2px solid black;
-}
-
-.Humidity{
-  display: flex;
-  color: red;
-
 }

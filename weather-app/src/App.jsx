@@ -79,12 +79,14 @@ export default function App(){
       
         <WeatherCard
             name={weatherData.name}
+            description={weatherData?.weather?.description}
             tempHi={weatherData?.main?.temp_max}
             tempLo={weatherData?.main?.temp_min}
           /> 
       ): (
             <WeatherCard
               name={geoData.name}
+              description={weatherData?.weather?.description}
               tempHi={geoData?.main?.temp_max}
               tempLo={geoData?.main?.temp_min}
             /> 
@@ -95,6 +97,7 @@ export default function App(){
       <DefaultCard
       name='Humidity'
       defaultData={weatherData?.main?.humidity}  
+
       />
       <DefaultCard
       name='Speed'
