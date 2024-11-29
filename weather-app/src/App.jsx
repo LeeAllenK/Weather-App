@@ -1,4 +1,5 @@
 import {React , useState , useEffect} from 'react';
+import moment from 'moment';
 
 import {WeatherCard} from './components/WeatherCard'
 import {DefaultCard} from './components/DefaultCard'
@@ -15,8 +16,9 @@ export default function App(){
   const [info , setInfo] = useState(
     {
       sunrise: '',
-      sunset: ''
-
+      sunset: '',
+      sunriseGeo: '',
+      sunsetGeo: ''
     }
     )
 
@@ -37,13 +39,18 @@ export default function App(){
         const dataCity = await cityRes.json();
         setGeoData(data )
         setWeatherData(dataCity)
-        const sunRise = new Date(dataCity?.sys?.sunrise)
-        const sunSet = new Date(dataCity?.sys?.sunset)
+        const sunRise = new Date(dataCity?.sys?.sunrise * 1000).toLocaleTimeString('en-US');
+        const sunSet = new Date(dataCity?.sys?.sunset * 1000).toLocaleTimeString('en-US')
+        const sunRiseGeo = new Date(data?.sys?.sunrise * 1000).toLocaleTimeString('en-US')
+        const sunSetGeo = new Date(data?.sys?.sunset * 1000).toLocaleTimeString('en-US')
         setInfo({
         sunrise:sunRise.toString(),
-        sunset: sunSet.toString()
-          
+        sunset: sunSet.toString(),
+        sunriseGeo: sunRiseGeo.toString(),
+        sunsetGeo: sunSetGeo.toString()
         })
+      console.log(dataCity)
+      console.log(geoData)
       }catch(err){
         return err;
      }
@@ -54,6 +61,9 @@ export default function App(){
  function handleCity(){
    setCity(getCity);
   }
+  const changeToFah = (k) => {
+    return Math.floor(((k - 273.15)* 9/5) + 32)
+  };
 
   return(
     <div className='App'>
@@ -76,58 +86,107 @@ export default function App(){
       </div>
       <section className='sectionMain'>
       {  city.length > 0 ? (
-      
+       <>
         <WeatherCard
             name={weatherData.name}
-            description={weatherData?.weather?.description}
-            tempHi={weatherData?.main?.temp_max}
-            tempLo={weatherData?.main?.temp_min}
+              description={weatherData?.weather && weatherData?.weather[0]?.description}
+            tempHi={changeToFah(weatherData?.main?.temp_max)}
+            tempLo={changeToFah(weatherData?.main?.temp_min)}
+            sunrise={info.sunrise}
+            sunset={info.sunset}
+            day={moment().format('dddd')}
+            date={moment().format('LL')}
           /> 
+            <section className='sectionData'>
+              <DefaultCard
+                name='Humidity'
+                defaultData={weatherData?.main?.humidity}
+                addOn='%'
+              />
+              <DefaultCard
+                name='Speed'
+                defaultData={weatherData?.wind?.speed}
+                addOn={'Mph'}
+              />
+              <DefaultCard
+                name='Gust'
+                defaultData={weatherData?.wind?.deg} 
+                addOn='&deg;'
+              />
+              <DefaultCard
+                name='Feels Like'
+                defaultData={weatherData?.main?.feels_like}
+              />
+              <DefaultCard
+                name='Icon'
+                defaultData={weatherData?.icon}
+              />
+              <DefaultCard
+                name='Pressure'
+                defaultData={weatherData?.main?.pressure}
+              />
+              <DefaultCard
+                name='Sunrise'
+                defaultData={info.sunrise}
+              />
+              <DefaultCard
+                name='Sunset'
+                defaultData={info.sunset}
+              />
+            </section>
+      </>
       ): (
+        <>
             <WeatherCard
               name={geoData.name}
-              description={weatherData?.weather?.description}
-              tempHi={geoData?.main?.temp_max}
-              tempLo={geoData?.main?.temp_min}
-            /> 
-    
+              description={geoData? geoData?.weather[0]?.main : ''}
+              tempHi={changeToFah(geoData?.main?.temp_max)}
+              tempLo={changeToFah(geoData?.main?.temp_min)}
+              sunrise={info.sunrise}
+              sunset={info.sunset}
+              day={moment().format('dddd')}
+              date={moment().format('LL')}
+            />
+              <section className='sectionData'>
+                <DefaultCard
+                  name='Humidity'
+                  defaultData={geoData?.main?.humidity}
+                  addOn='%'
+                />
+                <DefaultCard
+                  name='Speed'
+                  defaultData={geoData?.wind?.speed}
+                  addOn={'Mph'}
+                />
+                <DefaultCard
+                  name='Gust'
+                  defaultData={geoData?.wind?.deg}
+                  addOn='&deg;'
+                />
+                <DefaultCard
+                  name='Feels Like'
+                  defaultData={geoData?.main?.feels_like}
+                />
+                <DefaultCard
+                  name='Icon'
+                  defaultData={geoData?.icon}
+                />
+                <DefaultCard
+                  name='Pressure'
+                  defaultData={geoData?.main?.pressure}
+                />
+                <DefaultCard
+                  name='Sunrise'
+                  defaultData={info.sunriseGeo}
+                />
+                <DefaultCard
+                  name='Sunset'
+                  defaultData={info.sunsetGeo}
+                />
+              </section>
+        </>
       )}
-      
-    <section className='sectionData'>
-      <DefaultCard
-      name='Humidity'
-      defaultData={weatherData?.main?.humidity}  
 
-      />
-      <DefaultCard
-      name='Speed'
-      defaultData={weatherData?.wind?.speed}  
-      />
-      <DefaultCard
-      name='Gust'
-      defaultData={weatherData?.wind?.gust}  
-      />
-      <DefaultCard
-      name='Feels Like'
-      defaultData={weatherData?.main?.feels_like}  
-      />
-      <DefaultCard
-      name='Icon'
-      defaultData={weatherData?.icon}  
-      />
-      <DefaultCard
-      name='Pressure'
-      defaultData={weatherData?.main?.pressure}  
-      />
-      <DefaultCard
-      name='Sunrise'
-      defaultData={info.sunrise.toString()}  
-      />
-      <DefaultCard
-      name='Sunset'
-            defaultData={info.sunset.toString()}
-      />
-      </section>
       </section>
     </div>
   )
