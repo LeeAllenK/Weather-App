@@ -14,7 +14,7 @@ body{
   font-weight: bolder;
   font-style: normal;
   font-size: 20px;
-
+  
 }
 
 .App{
@@ -23,8 +23,8 @@ body{
   width: 100%;
 }
 .input{
-  display: flex;
-  min-width: 100px;
+  min-width: 70%;
+  min-height: 30px;
   margin: 20px;
 }
 .WeatherCard {
@@ -33,10 +33,11 @@ body{
   border: 2px solid black;
   border-radius: 60px;
   border-right: none;
-  width: 100%px;
+  width: 100%;
   padding: 20px;
   box-shadow: 10px 10px 10px black;
   margin: 10px;
+  overflow: hidden;
 }
 .temps{
   display: flex;
@@ -60,30 +61,34 @@ body{
   box-shadow: 5px 5px 5px red;
   margin: 10px;
 }
-
-.sectionMain{
+.sidebarContents{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  /* width: 100%; */
+}
+.sectionMain{
+  display: flex;
+  flex-direction:column;
   min-width: 10px;
   width: 70%;
 }
 
 .defaultCard{
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  width: 20%;
   border: 2px solid black;
   border-radius: 20px;
-  margin: 10px;
-  height: 150px;
+  margin: 20px;
+  width: 100%;
   overflow: hidden;
-  flex: 0 0 20%;
   box-shadow: 10px 5px 5px rgb(0, 0, 0);
 }
 .Default{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
 }
 .wind{
   display: flex;
@@ -101,4 +106,11 @@ body{
 .sectionLongLat{
   display: flex;
   border:2px solid black;
+}
+.defSec ,.citySec{
+  display: flex;
+  flex-direction: row;
+}
+.icon{
+  height: 50%;
 }
