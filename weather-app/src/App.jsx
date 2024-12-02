@@ -51,7 +51,7 @@ export default function App(){
       sunsetGeo: sunSet
       })
       console.log(fiveDay)
-      
+      console.log(data)
       }catch(err){
         return err;
      }
@@ -81,7 +81,7 @@ export default function App(){
         })
         setForecastCity(fiveDay)
         console.log(fiveDay)
-        // console.log(data)
+        console.log(data)
       }catch(err){
         console.error(err);  
       }
@@ -118,11 +118,15 @@ export default function App(){
         {city.length > 0 ? (
           <>
               <img className='sideImg' alt='No image' src={`http://openweathermap.org/img/w/${weatherData ? weatherData?.list[0]?.weather[0]?.icon : ''}.png`} />
+              <div >{changeToFah(weatherData ? weatherData?.list[0]?.main.temp : '')}</div>
               <div >{weatherData ? weatherData?.list[0]?.weather[0].description : ''}</div>
           </>
         ): (
-          <> <img className='sideImg' alt='No image' src={`http://openweathermap.org/img/w/${geoData ? geoData?.list[0]?.weather[0]?.icon : ''}.png`}/>
-        <div >{geoData ? geoData?.list[0]?.weather[0].description : ''}</div></>
+          <> 
+          <img className='sideImg' alt='No image' src={`http://openweathermap.org/img/w/${geoData ? geoData?.list[0]?.weather[0]?.icon : ''}.png`}/>
+        <div >{changeToFah(geoData ? geoData?.list[0]?.main.temp : '')}&deg;</div>
+        <div >{geoData ? geoData?.list[0]?.weather[0].description : ''}</div>
+        </>
         )}
        
         </div>
@@ -136,6 +140,7 @@ export default function App(){
                 <WeatherCard
                   name={weatherData?.city?.name}
                   description={weatherData ? weatherData?.list[0]?.weather[0].description: ''}
+                  temp={changeToFah(weatherData ? weatherData?.list[0]?.main?.temp : '')}
                   tempHi={changeToFah(weatherData ? weatherData?.list[0]?.main?.temp_max : '')}
                   tempLo={changeToFah(weatherData ? weatherData?.list[0]?.main?.temp_min : '')}
                   sunrise={info.sunrise}
@@ -166,6 +171,7 @@ export default function App(){
                <WeatherCard
                 name={geoData?.city?.name}
                 description={geoData ? geoData?.list[0]?.weather[0].description : ''}
+                temp={changeToFah(geoData ? geoData?.list[0]?.main?.temp_max : '')}
                 tempHi={changeToFah(geoData ? geoData?.list[0]?.main?.temp_max : '')}
                 tempLo={changeToFah(geoData ? geoData?.list[0]?.main?.temp_min : '')}
                 sunrise={info.sunriseGeo}

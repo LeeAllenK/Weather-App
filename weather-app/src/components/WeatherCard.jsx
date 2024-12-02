@@ -1,6 +1,6 @@
 
 
-export function WeatherCard({name , description, icon,tempHi, tempLo , day , date , sunset , sunrise }){
+export function WeatherCard({name , description, icon,tempHi, tempLo , day , date , sunset , sunrise , temp}){
 
 	return(
 		<div className='WeatherCard'>
@@ -16,6 +16,7 @@ export function WeatherCard({name , description, icon,tempHi, tempLo , day , dat
 			<div className='IconBorder'>
 				<img className='icon' alt='No image' src={icon}/>
 				<p className='description'>{description}</p>
+				<p className='iconTemp' >{temp}&deg;</p>
 			</div>
 			<section>
 				
