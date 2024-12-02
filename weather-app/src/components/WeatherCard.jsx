@@ -13,9 +13,9 @@ export function WeatherCard({name , description, icon,tempHi, tempLo , day , dat
 			<p >sunrise: {sunrise}</p>		
 			<p >sunset: {sunset}</p>		
 			</section>
-			<div className='IconBorder'>
+			<div className='iconBorder'>
 				<img className='icon' alt='No image' src={icon}/>
-				<p className='description'>{description}</p>
+				<p className='iconDescription'>{description}</p>
 				<p className='iconTemp' >{temp}&deg;</p>
 			</div>
 			<section>

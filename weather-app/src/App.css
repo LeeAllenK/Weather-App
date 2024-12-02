@@ -26,6 +26,17 @@ body{
   min-width: 70%;
   min-height: 30px;
   margin: 20px;
+  border: none transparent;
+  outline: none;
+
+}
+.inputBorder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fontIcon{
+ cursor: pointer;
 }
 .WeatherCard {
   display: flex;
@@ -55,17 +66,28 @@ body{
 
 }
 .sectionSidebar{
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   border-radius: 20px;
-  height: 100px;
+  height: 800px;
   box-shadow: 5px 5px 5px red;
   margin: 10px;
+  width: 250px;
+}
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
 }
 .sidebarContents{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  /* width: 100%; */
+  justify-content: center;
+  height: 600px;
+  font-size: 30px;
+  font-weight: bolder;
 }
 .sectionMain{
   display: flex;
@@ -82,7 +104,7 @@ body{
   border-radius: 20px;
   margin: 20px;
   width: 100%;
-  height: 77%;
+  height: 80%;
   overflow: hidden;
   box-shadow: 10px 5px 5px rgb(0, 0, 0);
 }
@@ -113,10 +135,24 @@ body{
   flex-direction: row;
 }
 .icon{
-  height: 50%;
+  height: 30%;
+}
+.iconBorder{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;  
+  justify-content: space-evenly;
+  font-weight: bolder;
+
+}
+.iconTemp{
+  font-size: 80px;
+}
+.iconDescription{
+  font-size: 30px;
 }
 .forecastIcon{
   display: flex;
   width:100%;
-  height: 20%;
+  height: 25%;
 }

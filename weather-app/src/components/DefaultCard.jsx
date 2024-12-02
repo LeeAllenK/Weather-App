@@ -11,8 +11,6 @@ export function DefaultCard({ defaultData ,date , addOn , day , icon , temp ,tem
 				src={icon}	
 				/><p>HI {tempHi}&deg;</p><p>Lo {tempLo}&deg;</p>
 				<p>{description}</p></h1>
-				
-				
 			</section>
 			<section>
 
