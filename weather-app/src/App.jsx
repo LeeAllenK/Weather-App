@@ -51,7 +51,7 @@ export default function App(){
         return err;
      }
     }
-      getLocation()
+      // getLocation()
   },[apiKey , lat, long])
 
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function App(){
         return err;  
       }
     }
-      getWeather()
+      // getWeather()
   },[apiKeyCity])
 
  function handleCity(){
