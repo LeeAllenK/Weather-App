@@ -18,9 +18,6 @@ export function WeatherCard({name , description, icon,tempHi, tempLo , day , dat
 				<p className='iconDescription'>{description}</p>
 				<p className='iconTemp' >{temp}&deg;</p>
 			</div>
-			<section>
-				
-			</section>
 		</div>
 	)
 }

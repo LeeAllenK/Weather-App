@@ -5,7 +5,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  /* padding: 5px; */
   text-align: center;
 }
 body{
@@ -24,8 +23,11 @@ body{
   min-width: 70%;
   min-height: 30px;
   margin: 20px;
-  border: none transparent;
-  outline: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size:inherit;
+  font-style: inherit;
+  font-weight: inherit;
 }
 .inputBorder{
   display: flex;
@@ -41,11 +43,18 @@ body{
   border: 2px solid black;
   border-radius: 60px;
   border-right: none;
-  width: 100%;
+  width: 870px;
   padding: 20px;
   box-shadow: 10px 10px 10px black;
   margin: 10px;
-  overflow: hidden;
+  
+}
+@media (max-width: 768px) {
+  .WeatherCard {
+    flex-direction: row; 
+    align-items: center;
+    width: 100%;
+  }
 }
 .temps{
   display: flex;
@@ -73,15 +82,13 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
 }
 .sidebarContents{
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 600px;
-  font-size: 30px;
-  font-weight: bolder;
+  font-size: 40px;
 }
 .sectionMain{
   display: flex;
@@ -96,10 +103,17 @@ body{
   border: 2px solid black;
   border-radius: 20px;
   margin: 20px;
-  width: 100%;
-  height: 80%;
-  overflow: hidden;
+  width: 400px;
+  height: 400px;
   box-shadow: 10px 5px 5px rgb(0, 0, 0);
+}
+@media (max-width: 768px) {
+  .defaultCard {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
 }
 .Default{
   display: flex;
@@ -116,7 +130,6 @@ body{
   margin: 20px;
   height: 500px;
 }
-
 .sectionLongLat{
   display: flex;
   border:2px solid black;
@@ -124,6 +137,14 @@ body{
 .defSec{
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 768px) {
+  .defSec{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
 }
 .icon{
   height: 30%;
@@ -134,7 +155,6 @@ body{
   flex-wrap: wrap;  
   justify-content: space-evenly;
   font-weight: bolder;
-
 }
 .iconTemp{
   font-size: 80px;
@@ -147,3 +167,4 @@ body{
   width:100%;
   height: 25%;
 }
+

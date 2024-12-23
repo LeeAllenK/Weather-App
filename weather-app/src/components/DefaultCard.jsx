@@ -1,5 +1,5 @@
 
-export function DefaultCard({ defaultData ,date , addOn , day , icon , temp ,tempHi, tempLo, description }) {
+export function DefaultCard({day , icon , temp ,tempHi, tempLo, description }) {
 
 
 	return (

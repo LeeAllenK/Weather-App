@@ -31,7 +31,6 @@ export default function App(){
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
-
     async function getLocation(){
       try{
         const res = await fetch(apiKey);
@@ -46,21 +45,17 @@ export default function App(){
       sunriseGeo: sunRise,
       sunsetGeo: sunSet
       })
-
       }catch(err){
         return err;
      }
     }
-      // getLocation()
+      getLocation()
   },[apiKey , lat, long])
-
   useEffect(() => {
-    
     const getWeather = async () => {
       try{
         const res = await fetch(apiKeyCity);
         const data = await res.json();
-
         const sunRise = new Date(data?.city?.sunrise * 1000).toLocaleTimeString('en-US')
         const sunSet = new Date(data?.city?.sunset * 1000).toLocaleTimeString('en-US')
         const fiveDay = data?.list?.filter((d, i) => i % 8 === 0)
@@ -81,7 +76,7 @@ export default function App(){
         return err;  
       }
     }
-      // getWeather()
+      getWeather()
   },[apiKeyCity])
 
  function handleCity(){
@@ -94,7 +89,6 @@ export default function App(){
   }
   return(
     <div className='App'>
-    
       <div className='sectionSidebar'>
       <div className='inputBorder'>
        <input
@@ -108,6 +102,7 @@ export default function App(){
         <FontAwesomeIcon
           icon={faLocationArrow}
           className='fontIcon'
+          style={{cursor: 'pointer'}}
             onClick={(e) => {
               e.preventDefault();
               handleCity();
@@ -119,7 +114,7 @@ export default function App(){
         {city.length > 0 ? (
           <div className='sidebarContents'>
               <img className='sideImg' alt='No image' src={`http://openweathermap.org/img/w/${weatherData ? weatherData?.list[0]?.weather[0]?.icon : ''}.png`} />
-              <div >{changeToFah(weatherData ? weatherData?.list[0]?.main.temp : '')}</div><br/> 
+            <div >{changeToFah(weatherData ? weatherData?.list[0]?.main.temp : '')}&deg;</div><br/> 
               <div >{weatherData ? weatherData?.list[0]?.weather[0].description : ''}</div>
           </div>
         ): (
