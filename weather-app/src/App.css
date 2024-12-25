@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+  box-sizing: border-box;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+body{
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color:  rgb(74, 73, 73);
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 20px; 
+}
+.signinBtn{
+    border-radius: 8px;
+    border: 4px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 2em;
+    font-weight: 900;
+    font-family: inherit;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.signinBtn:hover {
+  border-color: white;
+}
+.logout{
+  display: flex;
+}
+.logoutBtn{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+    border: 4px solid transparent;
+    font-size: 2em;
+    font-weight: 900;
+    font-family: inherit;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    width: 250px;
+    transition: border-color 0.25s;
+}
+.logoutBtn:hover{
+    border-color: white;
+}
+.App{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.input{
+  min-width: 70%;
+  min-height: 30px;
+  margin: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size:inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+.inputBorder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fontIcon{
+ cursor: pointer;
+}
+.WeatherCard {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 60px;
+  border-right: none;
+  width: 870px;
+  padding: 20px;
+  box-shadow: 10px 10px 10px black;
+  margin: 10px;
+  
+}
+@media (max-width: 768px) {
+  .WeatherCard {
+    flex-direction: row; 
+    align-items: center;
+    width: 100%;
+  }
+}
+.temps{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tempBorder{
+  display: flex;
+  justify-content: space-evenly;
+}
+.temp{
+  display: flex;
+}
+.sectionSidebar{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 800px;
+  box-shadow: 5px 5px 5px black;
+  margin: 10px;
+  width: 250px;
+}
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.sidebarContents{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 600px;
+  font-size: 40px;
+}
+.sectionMain{
+  display: flex;
+  flex-direction:column;
+  min-width: 10px;
+  width: 70%;
+}
+.defaultCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 5px;
+  width: 300px;
+  height: 400px;
+  box-shadow: 4px 5px 5px black;;
+}
+@media (max-width: 768px) {
+  .defaultCard {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+}
+.Default{
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+}
+.wind{
+  display: flex;
+}
+.sectionData{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 20px;
+  height: 500px;
+}
+.sectionLongLat{
+  display: flex;
+  border:2px solid black;
+}
+.defSec{
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 768px) {
+  .defSec{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+}
+.icon{
+  height: 30%;
+}
+.iconBorder{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;  
+  justify-content: space-evenly;
+  font-weight: bolder;
+}
+.iconTemp{
+  font-size: 80px;
+}
+.iconDescription{
+  font-size: 30px;
+}
+.forecastIcon{
+  display: flex;
+  width:100%;
+  height: 25%;
+}
+
