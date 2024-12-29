@@ -13,7 +13,7 @@ This five-day weather forecast app \provide users with accurate weather informat
 
 <div id="header" >
  <h1 class="heading-element" dir="auto">Optimizations:</h1>
- 
+Add the ability for users to search for weather forecasts by entering a city and state. Enhance the user interface to make it more visually appealing. Plan to develop a mobile version of the app using React Native. This will allow users to access the weather forecast on their mobile devices, improving the overall user experience.
 </div>
 <div id="header" >
  <h1 class="heading-element" dir="auto">Installation:</h1>
@@ -24,5 +24,6 @@ This five-day weather forecast app \provide users with accurate weather informat
 
 <div id="header">
  <h1 class="heading-element" dir="auto">Lessons Learned:</h1>
- 
+  Utilizing useEffect hook to make API calls for fetching weather data. Ensured dependencies are correctly updated to trigger re-renders when necessary.
+  Also Implemented conditional rendering to display different UI elements based on the state of the application. These lessons have significantly improved the efficiency and user experience of the weather forecast app.
 </div>
