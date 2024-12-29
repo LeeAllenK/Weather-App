@@ -8,7 +8,7 @@
 <div id="header" >
  <h1 class="heading-element" dir="auto">How It's Made:</h1>
  Tech used: HTML, CSS, JavaScript, React, Vite<br/><br/>
-This five-day weather forecast app leverages modern web technologies to provide users with accurate weather information based on their exact location. By utilizing the Geolocation API, the app can pinpoint the user's location and fetch a detailed five-day weather forecast using a reliable weather API.
+This five-day weather forecast app \provide users with accurate weather information based on their exact location. By utilizing the Geolocation API, the app can pinpoint the user's location and fetch a detailed five-day weather forecast using a reliable weather API.
 </div>
 
 <div id="header" >
